@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Image Category Visualization</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+        #imagePreview {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            max-width: 300px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            display: none;
+        }
+        #preview {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border: 2px solid white;
+        }
+        #imageInfo {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+        }
+        .confidence-bar {
+            width: 100%;
+            height: 10px;
+            background: #333;
+            margin-top: 5px;
+        }
+        .confidence-level {
+            height: 100%;
+            background: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <div id="imagePreview">
+        <img id="preview" src="" alt="Preview">
+        <div id="imageInfo"></div>
+    </div>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.159.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.159.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <script type="module" src="visualization.js"></script>
+</body>
+</html>
