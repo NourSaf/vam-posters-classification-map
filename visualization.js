@@ -18,10 +18,10 @@ const LOD_DISTANCE = 50;
 
 // Add these variables at the top of your file with other globals
 let autoRotate = false; // Controls whether camera automatically rotates
-let autoRotateSpeed = 0.05; // Speed of rotation - very subtle
+let autoRotateSpeed = 0.03; 
 let userInteracted = false; // To track if user has manually controlled the camera
 let lastUserInteractionTime = 0;
-const AUTO_ROTATE_RESUME_DELAY = 3000; // ms to wait after interaction before resuming animation
+const AUTO_ROTATE_RESUME_DELAY = 10000; // ms to wait after interaction before resuming animation
 
 // Create a single placeholder texture for all sprites initially
 const placeholderCanvas = document.createElement('canvas');
@@ -469,7 +469,7 @@ function createParticleGroups(categoriesMap) {
     // Enable auto-rotation after a short delay
     setTimeout(() => {
         autoRotate = true;
-    }, 100);
+    }, 8000);
 }
 
 function positionCameraForSpiralView(viewRadius) {
@@ -847,7 +847,7 @@ function animate() {
         );
         
         // Increment angle for rotation (negative for clockwise in this coordinate system)
-        angle -= autoRotateSpeed * 0.03; // Reduced for subtler rotation
+        angle -= autoRotateSpeed * 0.02; // Reduced for subtler rotation
         
         // Calculate new position while preserving y-elevation
         const newX = targetPosition.x + xzDistance * Math.cos(angle);
