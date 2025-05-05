@@ -469,7 +469,7 @@ function createParticleGroups(categoriesMap) {
     // Enable auto-rotation after a short delay
     setTimeout(() => {
         autoRotate = true;
-    }, 1000);
+    }, 100);
 }
 
 function positionCameraForSpiralView(viewRadius) {
@@ -847,7 +847,7 @@ function animate() {
         );
         
         // Increment angle for rotation (negative for clockwise in this coordinate system)
-        angle -= autoRotateSpeed * 0.05; // Reduced for subtler rotation
+        angle -= autoRotateSpeed * 0.03; // Reduced for subtler rotation
         
         // Calculate new position while preserving y-elevation
         const newX = targetPosition.x + xzDistance * Math.cos(angle);
